@@ -8,14 +8,14 @@ encoding:         "utf-8"
 permalink:        pretty
 
 # Setup
-title:            松林先森
-tagline:          '短桥斜路入松林坡'
-description:      'Hello,World! Here is my personal weblog about technology and life.'
-url:              http://liwenbin1991.github.io
+title:            陈苑韬
+tagline:          'Stay hungry, Stay foolish.'
+description:      '陈苑韬的个人技术博客.'
+url:              http://chenyuantao.github.io
 
 author:
-  name:           'liwenbin1991'
-  url:            https://github.com/liwenbin1991
+  name:           'chenyuantao'
+  url:            https://github.com/chenyuantao
 
 paginate:         5
 
@@ -26,4 +26,4 @@ version:          1.0.0
 comments :
     provider : duoshuo
     duoshuo :
-      short_name : lwb1991
+    short_name : chenyuantao
