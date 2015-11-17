@@ -13,7 +13,7 @@ tagline:          'Stay hungry, Stay foolish.'
 description:      '陈苑韬的个人技术博客.'
 url:              http://chenyuantao.github.io
 
-author:           'chenyuantao'
+author:           
   name:           'chenyuantao'
   url:            https://github.com/chenyuantao
 
@@ -26,4 +26,4 @@ version:          1.0.0
 comments :
     provider : duoshuo
     duoshuo :
-    short_name : chenyuantao
+      short_name : chenyuantao
