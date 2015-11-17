@@ -1,0 +1,29 @@
+# Dependencies
+markdown:         rdiscount
+highlighter:      pygments
+
+#
+encoding:         "utf-8"
+# Permalinks
+permalink:        pretty
+
+# Setup
+title:            松林先森
+tagline:          '短桥斜路入松林坡'
+description:      'Hello,World! Here is my personal weblog about technology and life.'
+url:              http://liwenbin1991.github.io
+
+author:
+  name:           'liwenbin1991'
+  url:            https://github.com/liwenbin1991
+
+paginate:         5
+
+# Custom vars
+version:          1.0.0
+
+# duoshuo
+comments :
+    provider : duoshuo
+    duoshuo :
+      short_name : lwb1991
