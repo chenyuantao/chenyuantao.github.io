@@ -9,11 +9,11 @@ permalink:        pretty
 
 # Setup
 title:            陈苑韬
-tagline:          'Stay hungry, Stay foolish.'
-description:      '陈苑韬的个人技术博客.'
+tagline:          'Keep hungry, Keep foolish.'
+description:      '你好，这里是陈苑韬的个人博客网站。'
 url:              http://chenyuantao.github.io
 
-author:           
+author:
   name:           'chenyuantao'
   url:            https://github.com/chenyuantao
 
