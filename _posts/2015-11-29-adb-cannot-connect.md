@@ -3,7 +3,7 @@ layout: post
 author: chenyuantao
 title: The connection to adb is down, and a severe error has occured.
 category: android
-tag: [markdown]
+tag: [android][adb][eclipse]
 ---
 
 有时候我们用边用酷狗听歌边用eclipse连接android模拟器的时候，会报The connection to adb is down, and a severe error has occured的错误，网友说的通过任务管理器关闭adb.exe再重启eclipse的方法治标不治本，我们把kadb.exe关闭之后，可以到酷狗的安装文件夹里找到kadb.exe然后删除，以后就没事了。
