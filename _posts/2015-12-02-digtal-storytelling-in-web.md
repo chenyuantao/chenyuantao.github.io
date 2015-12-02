@@ -14,7 +14,7 @@ tag: [数字故事]
   [1]: /public/pic/szgs1.jpg
 
 ### 2.直接开始创建第一章
-![szgs1][1]
+![szgs2][2]
 
 
-  [1]: /public/pic/szgs2.jpg
+  [2]: /public/pic/szgs2.jpg
