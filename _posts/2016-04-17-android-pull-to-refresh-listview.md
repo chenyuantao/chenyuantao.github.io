@@ -3,7 +3,7 @@ layout: post
 author: chenyuantao
 title: android自定义下拉更新上拉刷新的ListView
 category: android
-tag: [markdown]
+tag: [android]
 ---
 ###**引言**
 之前做安卓项目，都没有绕过下拉刷新上拉更新的ListView这个需求，每次遇到这样的问题，都是从网上找开源的ListView或者用回以前用过的开源ListView来实现，现在大三出来实习了，公司项目又遇到这样的问题，因此决定自己动手自定义一个来用。

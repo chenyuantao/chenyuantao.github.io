@@ -3,7 +3,7 @@ layout: post
 author: chenyuantao
 title: android自定义仿Siri曲线View
 category: android
-tag: [markdown]
+tag: [android]
 ---
 
 ###效果图
