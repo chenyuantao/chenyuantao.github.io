@@ -21,15 +21,15 @@ Path.quadTo(float x1, float y1, float x2, float y2)
 ![解析](http://img.blog.csdn.net/20160616232218323)
 ###使用方法
 在xml中，
-```java
+`
 <com.tao.view.SiriView
         android:id="@+id/siriView"
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:layout_centerInParent="true"/>
-```
+`
 在Activity.java中，
-```java
+`
 SiriView siriView = (SiriView) findViewById(R.id.siriView);
 // 停止波浪曲线
 siriView.stop();
@@ -45,7 +45,7 @@ siriView.setWaveOffsetX(0f);
 siriView.setWaveAmount(4);
 // 设置曲线的速度，默认是0.1f
 siriView.setWaveSpeed(0.1f);
-```
+`
 ###Github地址
 https://github.com/chenyuantao/SiriView
 
