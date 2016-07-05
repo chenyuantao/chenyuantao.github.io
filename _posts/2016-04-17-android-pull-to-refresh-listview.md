@@ -15,34 +15,34 @@ tag: [android]
 ###**实现原理**
 简单的实现方法是，为ListView添加HeaderView和FooterView，然后将HeaderView和FooterView隐藏起来，等检测到下拉动作或上拉动作的时候，将相应的View显示出来。
 本例中，HeaderView和FooterView采用不同的隐藏和显示方式，HeaderView通过setPadding方法隐藏在第一项中，而FooterView则是直接setVisibility(View.GONE);来隐藏的，初始化的代码如下：
-{% highlight java linenos %}
-public void initView(Context context) {
-    //关闭View的OverScroll
-    setOverScrollMode(OVER_SCROLL_NEVER);
-    //设置滑动监听
-    setOnScrollListener(this);
-    //加载头尾布局
-    headerView = (RelativeLayout) LayoutInflater.from(context).inflate(R.layout.layout_header,this,false);
-    footerView = (RelativeLayout) LayoutInflater.from(context).inflate(R.layout.layout_footer, this,false);
-    progressWheel = (ProgressWheel) headerView.findViewById(R.id.progressWheel);
-    progressBar = (ProgressBar) footerView.findViewById(R.id.progressBar);
-    //测量头布局的高度
-    measureView(headerView);
-    headerViewHeight = headerView.getMeasuredHeight();
-    //添加到ListView
-    addHeaderView(headerView);
-    addFooterView(footerView);
-    //隐藏headerView到第一项里面
-    headerView.setPadding(0, -headerViewHeight, 0, 0);
-    //直接隐藏footerView
-    footerView.setVisibility(View.GONE);
-    //初始化默认状态量
-    state = DONE;
-    isRefreable = false;
-    isRecord = false;
-    isUpdatable = false;
-}
-{% endhighlight %}
+
+    public void initView(Context context) {
+        //关闭View的OverScroll
+        setOverScrollMode(OVER_SCROLL_NEVER);
+        //设置滑动监听
+        setOnScrollListener(this);
+        //加载头尾布局
+        headerView = (RelativeLayout) LayoutInflater.from(context).inflate(R.layout.layout_header,this,false);
+        footerView = (RelativeLayout) LayoutInflater.from(context).inflate(R.layout.layout_footer, this,false);
+        progressWheel = (ProgressWheel) headerView.findViewById(R.id.progressWheel);
+        progressBar = (ProgressBar) footerView.findViewById(R.id.progressBar);
+        //测量头布局的高度
+        measureView(headerView);
+        headerViewHeight = headerView.getMeasuredHeight();
+        //添加到ListView
+        addHeaderView(headerView);
+        addFooterView(footerView);
+        //隐藏headerView到第一项里面
+        headerView.setPadding(0, -headerViewHeight, 0, 0);
+        //直接隐藏footerView
+        footerView.setVisibility(View.GONE);
+        //初始化默认状态量
+        state = DONE;
+        isRefreable = false;
+        isRecord = false;
+        isUpdatable = false;
+    }
+
 初始化界面之后，我们就可以开始检测上拉和下拉动作了，不过在检测之前，我们还要确定当前状态是否可以刷新或更新，令我们的ListView继承OnScrollListener，然后重写onScroll方法：
 
     @Override
