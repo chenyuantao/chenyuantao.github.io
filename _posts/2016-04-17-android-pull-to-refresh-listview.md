@@ -15,8 +15,8 @@ tag: [markdown]
 ###**实现原理**
 简单的实现方法是，为ListView添加HeaderView和FooterView，然后将HeaderView和FooterView隐藏起来，等检测到下拉动作或上拉动作的时候，将相应的View显示出来。
 本例中，HeaderView和FooterView采用不同的隐藏和显示方式，HeaderView通过setPadding方法隐藏在第一项中，而FooterView则是直接setVisibility(View.GONE);来隐藏的，初始化的代码如下：
-```java
- public void initView(Context context) {
+
+    public void initView(Context context) {
         //关闭View的OverScroll
         setOverScrollMode(OVER_SCROLL_NEVER);
         //设置滑动监听
@@ -42,10 +42,10 @@ tag: [markdown]
         isRecord = false;
         isUpdatable = false;
     }
-```
+
 初始化界面之后，我们就可以开始检测上拉和下拉动作了，不过在检测之前，我们还要确定当前状态是否可以刷新或更新，令我们的ListView继承OnScrollListener，然后重写onScroll方法：
-```java
- @Override
+
+    @Override
     public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) {
         View lastVisibleItemView = this.getChildAt(this.getChildCount() - 1);
         View firstVisibleItemView = this.getChildAt(0);
@@ -60,25 +60,25 @@ tag: [markdown]
             isUpdatable = false;
         }
     }
-```
+
 做好准备之后，关键部分就是要重写onTouchEvent方法，来实现对用户的滑动监听。首先我们要把ListView的状态细分为7个，分别是：    
-```java
-private static final int DONE = 0; // 已完成状态
-private static final int PULL_TO_REFRESH = 1; // 下拉刷新状态
-private static final int OK_TO_REFRESH = 2; // 可以刷新的状态
-private static final int REFRESHING = 3; // 正在刷新状态
-private static final int PULL_TO_UPDATE = 4; // 上拉更新状态
-private static final int OK_TO_UPDATE = 5; // 可以更新的状态
-private static final int UPDATING = 6; // 正在更新状态
-```
+
+        private static final int DONE = 0; // 已完成状态
+        private static final int PULL_TO_REFRESH = 1; // 下拉刷新状态
+        private static final int OK_TO_REFRESH = 2; // 可以刷新的状态
+        private static final int REFRESHING = 3; // 正在刷新状态
+        private static final int PULL_TO_UPDATE = 4; // 上拉更新状态
+        private static final int OK_TO_UPDATE = 5; // 可以更新的状态
+        private static final int UPDATING = 6; // 正在更新状态
+
 DONE（已完成状态）：就是正常状态下的ListView。
 PULL_TO_REFRESH（下拉刷新状态）：下拉ListView时，HeaderView被拖出来但是又没有拖到可以刷新的状态。
 OK_TO_REFRESH（可以刷新状态）：下拉ListView时，手指移动距离大于HeaderView的高度，HeaderView被完整的拖出来的状态。
 REFRESHING（正在刷新状态）：当ListView处于可以刷新状态的时候手指释放了，就进入正在刷新状态，HeaderView被固定的显示出来。
 上拉更新的状态同下拉刷新，就不一一阐述了。
 重写OnTouchEvent的代码如下：
-```java
-@Override
+
+    @Override
     public boolean onTouchEvent(MotionEvent ev) {
         //如果当前状态是正在刷新或正在更新，则返回
         if (state == REFRESHING || state == UPDATING) {
@@ -187,10 +187,10 @@ REFRESHING（正在刷新状态）：当ListView处于可以刷新状态的时�
         }
         return super.onTouchEvent(ev);
     }
-```
+
 另外不要忘了做回调接口
-```java
- private OnRefreshUpdateListener listener; //回调接口
+
+    private OnRefreshUpdateListener listener; //回调接口
 
     public interface OnRefreshUpdateListener {
         void onRefresh();
@@ -223,7 +223,7 @@ REFRESHING（正在刷新状态）：当ListView处于可以刷新状态的时�
         //停止进度条动画
         progressBar.stopAnimation();
     }
-```
+
 
 ###**完整代码**
 完整代码我上传到了Github上，注释都写好了，研究起来很方便
