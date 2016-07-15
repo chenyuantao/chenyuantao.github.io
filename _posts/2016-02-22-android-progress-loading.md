@@ -1,7 +1,7 @@
 ---
 layout: post
 author: chenyuantao
-title: android自定义渐变色等待条
+title: Android自定义渐变色等待条
 category: android
 tag: [android]
 ---

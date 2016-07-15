@@ -1,7 +1,7 @@
 ---
 layout: post
 author: chenyuantao
-title: android自定义下拉更新上拉刷新的ListView
+title: Android自定义下拉更新上拉刷新的ListView
 category: android
 tag: [android]
 ---

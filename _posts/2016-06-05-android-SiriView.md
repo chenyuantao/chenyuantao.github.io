@@ -1,7 +1,7 @@
 ---
 layout: post
 author: chenyuantao
-title: android自定义仿Siri曲线View
+title: Android自定义仿Siri曲线View
 category: android
 tag: [android]
 ---
