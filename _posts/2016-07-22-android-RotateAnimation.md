@@ -1,7 +1,7 @@
 ---
 layout: post
 author: chenyuantao
-title: Android自定义Animation实现3D翻转按钮 
+title: Android自定义Animation实现3D翻转按钮
 category: android
 tag: [android]
 ---
